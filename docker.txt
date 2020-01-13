@@ -1,0 +1,32 @@
+brew install docker
+brew install docker-machine
+brew install docker-compose -> pas le droit dans le sujet donc on utilise pas
+docker-machine create ft-server
+docker-machine env ft-server
+->
+export DOCKER_TLS_VERIFY="1"
+export DOCKER_HOST="tcp://192.168.99.100:2376"
+export DOCKER_CERT_PATH="/Users/ade-temm/.docker/machine/machines/ft-server"
+export DOCKER_MACHINE_NAME="ft-server"
+# Run this command to configure your shell: 
+# eval $(docker-machine env ft-server)
+#Cree la machine ft-server
+
+docker ps -a -> montre les container inacifs
+docker container rm xxx -> supprime le container fermé xxx
+docker container prune -> supprime tous les containers fermés
+--> Marche aussi avec les images
+docker image -> liste les commandes liées aux images
+
+Commande RUN se lance à la création de l'image
+Commande CMD se lance à l'execution de l'image | création/lancement du container
+
+docker run --help -> affiche les flags pour run
+
+#POUR NE PAS BOURRER LA MEMOIRE!
+mv ~/.docker /sgoinfre/goinfre/Perso/ade-temm/.docker
+ln -s /sgoinfre/goinfre/Perso/ade-temm/.docker ~/.docker
+
+#changer les droits de ce doc
+chown -R login /sgoinfre/goinfre/Perso/ade-temm
+chmod 700 /sgoinfre/goinfre/Perso/ade-temm
